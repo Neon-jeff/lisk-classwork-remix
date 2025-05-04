@@ -11,7 +11,7 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "ID",
+						"name": "id",
 						"type": "uint256"
 					},
 					{
@@ -21,18 +21,18 @@
 						"type": "string"
 					}
 				],
-				"name": "NewTodoAdded",
+				"name": "newCandidateAdded",
 				"type": "event"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_content",
+						"name": "_name",
 						"type": "string"
 					}
 				],
-				"name": "addTodo",
+				"name": "addCandidate",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -41,33 +41,34 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_candidateID",
 						"type": "uint256"
 					}
 				],
-				"name": "getTodo",
+				"name": "getCandidate",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "id",
-								"type": "uint256"
-							},
-							{
-								"internalType": "string",
-								"name": "content",
-								"type": "string"
-							},
-							{
-								"internalType": "enum DataStructures.Status",
-								"name": "status",
-								"type": "uint8"
-							}
-						],
-						"internalType": "struct DataStructures.Todo",
+						"internalType": "string",
 						"name": "",
-						"type": "tuple"
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalCandidate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -79,14 +80,9 @@
 						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
-					},
-					{
-						"internalType": "enum DataStructures.Status",
-						"name": "_status",
-						"type": "uint8"
 					}
 				],
-				"name": "updateTodo",
+				"name": "vote",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -105,7 +101,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Datastructures.sol": "DataStructures"
+			"contracts/votingSystem.sol": "VotingSystem"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -119,12 +115,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Datastructures.sol": {
-			"keccak256": "0xb2ac57ad58dbd418fce9a04a0a3018efef2f34cf04cf175fe54da4ed30d9fcfe",
+		"contracts/votingSystem.sol": {
+			"keccak256": "0xbed773f31ca6a4fd117a40337a0af1f8bb85d569900aceb3e66137101286b2a2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a0b133a4c271a60e79673c194e0434e87ce674507dd1d810dda0694badcc319a",
-				"dweb:/ipfs/QmRbNtRCGJwEqcP8n8G185a5o96dqX29AZzSJXJ9jSBzYu"
+				"bzz-raw://df31c8daff6f41a0ce06d1871e7c5f2c1138d59177d6902be5dc7af702e0108e",
+				"dweb:/ipfs/QmaQeQR9araYy7UmfiL2A2CVc12XYt3qBcFFv3H2afRy93"
 			]
 		}
 	},

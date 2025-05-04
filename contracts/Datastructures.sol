@@ -30,18 +30,10 @@ contract DataStructures{
     }
 
     function addTodo(string memory _content) public {
-        // check if lenght of ID array is zero and assign one as the initial ID
-        uint todoLength = todoIDs.length;
-        if(todoLength == 0){
-            todoIDs.push(1);
-            todos[1] = Todo(1,_content,Status.Pending);
-            emit NewTodoAdded(1, "New todo item added");
-            return ;
-        }
-        todoIDs.push(todoLength + 1);
-        todos[todoLength+1] = Todo(todoLength + 1,_content,Status.Pending);
-        emit NewTodoAdded(todoLength+1, "New todo item added");
-        return ;
+        uint newID = todoIDs.length + 1;
+        todos[newID] = Todo(newID,_content,Status.Pending);
+        todoIDs.push(newID);
+        emit NewTodoAdded(newID, "New todo item added");
     }
 
     function updateTodo(uint _id, Status _status) checkID(_id) public {
